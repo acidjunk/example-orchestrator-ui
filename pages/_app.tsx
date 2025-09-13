@@ -9,6 +9,7 @@ import { QueryParamProvider } from 'use-query-params';
 
 import type { EuiSideNavItemType } from '@elastic/eui';
 import { EuiProvider, EuiThemeColorMode } from '@elastic/eui';
+import { EuiThemeAmsterdam } from '@elastic/eui';
 import {
     ColorModes,
     ConfirmationDialogContextWrapper,
@@ -78,6 +79,32 @@ function CustomApp({
                 />
             ),
         },
+        {
+            name: 'Search',
+            id: '10',
+            isSelected: router.pathname === '/search',
+            href: '/search',
+            renderItem: () => (
+                <WfoMenuItemLink
+                    path={'/search'}
+                    translationString="Search"
+                    isSelected={router.pathname === '/search'}
+                />
+            ),
+        },
+        {
+            name: 'Agent',
+            id: '10',
+            isSelected: router.pathname === '/agent',
+            href: '/agent',
+            renderItem: () => (
+                <WfoMenuItemLink
+                    path={'/agent'}
+                    translationString="Agent"
+                    isSelected={router.pathname === '/agent'}
+                />
+            ),
+        },
     ];
 
     const errorMonitoringHandler: WfoErrorMonitoring | undefined = {
@@ -97,6 +124,7 @@ function CustomApp({
                         >
                             <WfoAuth>
                                 <EuiProvider
+                                    theme={EuiThemeAmsterdam}
                                     colorMode={themeMode}
                                     modify={defaultOrchestratorTheme}
                                 >
