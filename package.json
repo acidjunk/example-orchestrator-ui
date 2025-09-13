@@ -1,5 +1,5 @@
 {
-    "name": "wfo-ui",
+    "name": "example-orchestrator-ui",
     "version": "2.5.0",
     "private": true,
     "scripts": {
